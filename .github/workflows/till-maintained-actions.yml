@@ -21,5 +21,3 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - uses: actions-rs/toolchain@v1
-      - uses: actions-rs/cargo@v1
