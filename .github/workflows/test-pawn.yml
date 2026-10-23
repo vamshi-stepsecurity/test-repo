@@ -1,0 +1,19 @@
+name: Test 
+
+on:
+  pull_request:
+    branches:
+      - develop
+  pull_request_target:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: clint-small
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.after || github.event.pull_request.head.sha }}
